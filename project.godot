@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Projeto Clicker"
-run/main_scene="res://Assets/scripts/bottle.tscn"
+run/main_scene="res://Assets/scenes/Principal.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=800
+window/size/viewport_width=160
+window/size/viewport_height=280
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 
@@ -26,3 +26,4 @@ window/handheld/orientation=1
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

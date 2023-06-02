@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxlt77wsikpwv"]
+
+[ext_resource type="Script" path="res://Assets/scenes/menu.gd" id="1_pbt3f"]
+[ext_resource type="Texture2D" uid="uid://cxclnx2ltatsx" path="res://Assets/objects/buttons/UiButton.png" id="1_srv8s"]
+[ext_resource type="Texture2D" uid="uid://b5f6djqrqcoyb" path="res://Assets/objects/buttons/MenuButton.png" id="2_v5msu"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_pbt3f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 13.0
+offset_bottom = 13.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_v5msu")
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 110.0
+offset_right = 109.0
+offset_bottom = 142.0
+texture_normal = ExtResource("1_srv8s")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Quit"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 122.0
+offset_bottom = 57.0
+scale = Vector2(0.487, 0.487)
+text = "SAIRR E NUNCA
+MÁS VOLTAR"
+
+[connection signal="pressed" from="CanvasLayer/Panel/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Quit" to="." method="_on_quit_pressed"]

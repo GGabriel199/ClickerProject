@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://n6n65konqjn4"]
+
+[ext_resource type="Texture2D" uid="uid://cxclnx2ltatsx" path="res://Assets/objects/buttons/UiButton.png" id="1_kdkg8"]
+
+[node name="Sprite2D" type="Sprite2D"]
+
+[node name="ButtonNormal" type="Sprite2D" parent="."]
+position = Vector2(75, 29)
+texture = ExtResource("1_kdkg8")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="ButtonPressed" type="Sprite2D" parent="."]
+position = Vector2(63, 74)
+texture = ExtResource("1_kdkg8")
+region_enabled = true
+region_rect = Rect2(0, 16, 32, 16)
+
+[node name="ButtonSelected" type="Sprite2D" parent="."]
+position = Vector2(117, 78)
+texture = ExtResource("1_kdkg8")
+region_enabled = true
+region_rect = Rect2(32, 16, 32, 16)
+
+[node name="ButtonDisabled" type="Sprite2D" parent="."]
+position = Vector2(119, 43)
+texture = ExtResource("1_kdkg8")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 16)
