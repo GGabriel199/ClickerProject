@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dplgl1tbqiofh"]
+[gd_scene load_steps=9 format=3 uid="uid://dplgl1tbqiofh"]
 
 [ext_resource type="Script" path="res://Assets/scripts/bottle.gd" id="1_gbkb0"]
 [ext_resource type="Texture2D" uid="uid://bj5cg6d0ohmhm" path="res://Assets/objects/scenario/Azuleijo.png" id="2_nmpb7"]
-[ext_resource type="AudioStream" uid="uid://vdusktgfxld8" path="res://Assets/audio/FUNK PROIBIDÃO COM GRAVE - FUNK 2023 - SELEÇÃO TOP PRA PAREDÃO 2023 - SÓ AS TOPS (FUNK PESADÃO 2023) (320 kbps).mp3" id="2_s0apj"]
-[ext_resource type="Texture2D" uid="uid://dtbbwcjwxk4fd" path="res://Assets/Player/Bootle.png" id="5_g021s"]
 [ext_resource type="Texture2D" uid="uid://b5f6djqrqcoyb" path="res://Assets/objects/buttons/MenuButton.png" id="5_xpq6f"]
-[ext_resource type="FontFile" uid="uid://b0hiocwb1jh1g" path="res://Assets/objects/fonts/kongtext.ttf" id="6_h8iw3"]
+[ext_resource type="PackedScene" uid="uid://cxl7hio6xhewp" path="res://Assets/prefabs/PopUpBottle.tscn" id="7_8rano"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wmuo"]
 texture = ExtResource("2_nmpb7")
@@ -61,7 +59,6 @@ script = ExtResource("1_gbkb0")
 [node name="somdeteste" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(64, 111)
 scale = Vector2(2, 2)
-stream = ExtResource("2_s0apj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -75,54 +72,12 @@ tile_set = SubResource("TileSet_o3swp")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 262146, 0, 65536, 262146, 1, 1, 327682, 0, 2, 327682, 0, 3, 327682, 0, 4, 327682, 0, 5, 327682, 0, 6, 327682, 0, 7, 327682, 0, 8, 327682, 0, 9, 327682, 0, 10, 393218, 0, 11, 393218, 0, 12, 393218, 0, 13, 393218, 0, 14, 393218, 0, 15, 393218, 0, 16, 393218, 0, 17, 393218, 0, 131072, 262146, 1, 196608, 262146, 1, 262144, 262146, 1, 327680, 262146, 1, 262163, 458754, 1, 327699, 458754, 1, 131091, 458754, 1, 196627, 458754, 1, 18, 393218, 0, 19, 458754, 0, 65555, 458754, 1, 393235, 458754, 1, 458771, 458754, 1, 393216, 262146, 1, 458752, 262146, 1, 524288, 262146, 1, 589824, 262146, 1, 524307, 458754, 1, 589843, 458754, 1, 655379, 458754, 1, 720915, 458754, 1, 655360, 262146, 1, 720896, 262146, 1, 786432, 262146, 2, 851968, 262146, 2, 786441, 65537, 0, 786451, 458754, 1, 851987, 458754, 1, 917523, 458754, 1, 983059, 458754, 1, 917504, 262146, 2, 983040, 262146, 2, 1048576, 262146, 2, 1114112, 262146, 2, 1048595, 458754, 1, 1114131, 458754, 1, 1179648, 262146, 2, 1245184, 262146, 2, 1179667, 458754, 1, 1245203, 458754, 1, 1310739, 458754, 2, 1376275, 458754, 2, 1310720, 262146, 2, 1376256, 262146, 2, 1441792, 262146, 2, 1507328, 262146, 2, 1572864, 262146, 2, 1638400, 262146, 2, 1703936, 262146, 2, 1769472, 262146, 2, 1835008, 262146, 2, 1441811, 458754, 2, 1507347, 458754, 2, 1572883, 458754, 2, 1638419, 458754, 2, 1703955, 458754, 2, 1769491, 458754, 2, 1835027, 458754, 2, 1900563, 458754, 2, 1900544, 262146, 2, 2293760, 262146, 3, 2293779, 458754, 3, 2228243, 458754, 2, 2162707, 458754, 2, 2097171, 458754, 2, 2031635, 458754, 2, 1966099, 458754, 2, 1966080, 262146, 2, 2031616, 262146, 2, 2097152, 262146, 2, 2162688, 262146, 2, 2228224, 262146, 2, 2293761, 327682, 3, 2293762, 393218, 3, 2293763, 327682, 3, 2293764, 393218, 3, 2293765, 327682, 3, 2293766, 393218, 3, 2293767, 327682, 3, 2293768, 393218, 3, 2293769, 327682, 3, 2293770, 393218, 3, 2293771, 327682, 3, 2293772, 393218, 3, 2293773, 327682, 3, 2293774, 393218, 3, 2293775, 327682, 3, 2293776, 393218, 3, 2293777, 327682, 3, 2293778, 393218, 3)
 
-[node name="Bottle" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = -62.0
-offset_right = -17.0
-offset_bottom = -30.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4, 4)
-size_flags_stretch_ratio = 0.0
-action_mode = 0
-texture_normal = ExtResource("5_g021s")
-
-[node name="Clicks" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -51.0
-offset_top = 14.0
-offset_right = 5.0
-offset_bottom = 25.0
-grow_horizontal = 2
-scale = Vector2(1.2, 1.2)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_fonts/font = ExtResource("6_h8iw3")
-theme_override_font_sizes/font_size = 8
-text = "CLICKS:"
-horizontal_alignment = 1
-
-[node name="Score" type="RichTextLabel" parent="CanvasLayer/Clicks"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 27.0
-offset_top = -0.833333
-offset_right = 78.0
-offset_bottom = 10.1667
-grow_horizontal = 2
-scale = Vector2(1.2, 1.2)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
-theme_override_fonts/normal_font = ExtResource("6_h8iw3")
-theme_override_font_sizes/normal_font_size = 8
-text = "0"
+[node name="Bottle" parent="CanvasLayer" instance=ExtResource("7_8rano")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="MenuButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 5.0
@@ -132,5 +87,4 @@ offset_bottom = 13.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("5_xpq6f")
 
-[connection signal="pressed" from="CanvasLayer/Bottle" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]

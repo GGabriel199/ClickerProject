@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://dxlt77wsikpwv"]
 
-[ext_resource type="Script" path="res://Assets/scenes/menu.gd" id="1_pbt3f"]
+[ext_resource type="Script" path="res://Assets/scripts/menu.gd" id="1_h5j0w"]
 [ext_resource type="Texture2D" uid="uid://bj5cg6d0ohmhm" path="res://Assets/objects/scenario/Azuleijo.png" id="2_5lv7v"]
 [ext_resource type="Texture2D" uid="uid://b5f6djqrqcoyb" path="res://Assets/objects/buttons/MenuButton.png" id="2_v5msu"]
 [ext_resource type="Texture2D" uid="uid://cxbne1f7un2al" path="res://Assets/objects/Items/Frame.png" id="4_5img6"]
@@ -66,7 +66,7 @@ tile_size = Vector2i(8, 8)
 sources/2 = SubResource("TileSetAtlasSource_weqe2")
 
 [node name="Menu" type="Node2D"]
-script = ExtResource("1_pbt3f")
+script = ExtResource("1_h5j0w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -81,7 +81,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 262146, 0, 65536, 262146, 1, 1, 327682, 0, 2, 327682, 0, 3, 327682, 0, 4, 327682, 0, 5, 327682, 0, 6, 327682, 0, 7, 327682, 0, 8, 327682, 0, 9, 327682, 0, 10, 393218, 0, 11, 393218, 0, 12, 393218, 0, 13, 393218, 0, 14, 393218, 0, 15, 393218, 0, 16, 393218, 0, 17, 393218, 0, 131072, 262146, 1, 196608, 262146, 1, 262144, 262146, 1, 327680, 262146, 1, 262163, 458754, 1, 327699, 458754, 1, 131091, 458754, 1, 196627, 458754, 1, 18, 393218, 0, 19, 458754, 0, 65555, 458754, 1, 393235, 458754, 1, 458771, 458754, 1, 393216, 262146, 1, 458752, 262146, 1, 524288, 262146, 1, 589824, 262146, 1, 524307, 458754, 1, 589843, 458754, 1, 655379, 458754, 1, 720915, 458754, 1, 655360, 262146, 1, 720896, 262146, 1, 786432, 262146, 2, 851968, 262146, 2, 786441, 65537, 0, 786451, 458754, 1, 851987, 458754, 1, 917523, 458754, 1, 983059, 458754, 1, 917504, 262146, 2, 983040, 262146, 2, 1048576, 262146, 2, 1114112, 262146, 2, 1048595, 458754, 1, 1114131, 458754, 1, 1179648, 262146, 2, 1245184, 262146, 2, 1179667, 458754, 1, 1245203, 458754, 1, 1310739, 458754, 2, 1376275, 458754, 2, 1310720, 262146, 2, 1376256, 262146, 2, 1441792, 262146, 2, 1507328, 262146, 2, 1572864, 262146, 2, 1638400, 262146, 2, 1703936, 262146, 2, 1769472, 262146, 2, 1835008, 262146, 2, 1441811, 458754, 2, 1507347, 458754, 2, 1572883, 458754, 2, 1638419, 458754, 2, 1703955, 458754, 2, 1769491, 458754, 2, 1835027, 458754, 2, 1900563, 458754, 2, 1900544, 262146, 2, 2293760, 262146, 3, 2293779, 458754, 3, 2228243, 458754, 2, 2162707, 458754, 2, 2097171, 458754, 2, 2031635, 458754, 2, 1966099, 458754, 2, 1966080, 262146, 2, 2031616, 262146, 2, 2097152, 262146, 2, 2162688, 262146, 2, 2228224, 262146, 2, 2293761, 327682, 3, 2293762, 393218, 3, 2293763, 327682, 3, 2293764, 393218, 3, 2293765, 327682, 3, 2293766, 393218, 3, 2293767, 327682, 3, 2293768, 393218, 3, 2293769, 327682, 3, 2293770, 393218, 3, 2293771, 327682, 3, 2293772, 393218, 3, 2293773, 327682, 3, 2293774, 393218, 3, 2293775, 327682, 3, 2293776, 393218, 3, 2293777, 327682, 3, 2293778, 393218, 3)
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -98,25 +98,32 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Shop"
 
-[node name="Shop1" type="TextureRect" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 43.0
-offset_right = 61.0
-offset_bottom = 83.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -92.0
+offset_right = 52.0
+offset_bottom = 30.0
+grow_vertical = 2
 scale = Vector2(1.5, 1.5)
+
+[node name="Shop1" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
 texture = ExtResource("4_5img6")
 
-[node name="Img1" type="TextureRect" parent="CanvasLayer/Panel/Shop1"]
+[node name="Img1" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer/Shop1"]
 layout_mode = 0
-offset_left = 8.66667
-offset_top = 7.33333
-offset_right = 48.6667
-offset_bottom = 47.3333
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_7eukm")
 
-[node name="Title" type="Label" parent="CanvasLayer/Panel/Shop1"]
+[node name="Title" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop1"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 2.66666
@@ -127,7 +134,7 @@ theme_override_colors/font_color = Color(0.937255, 0.843137, 0.560784, 1)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Soda"
 
-[node name="Item1" type="TextureButton" parent="CanvasLayer/Panel/Shop1"]
+[node name="Item1" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/Shop1"]
 layout_mode = 0
 offset_left = 42.6667
 offset_top = 15.3333
@@ -138,7 +145,7 @@ texture_pressed = ExtResource("10_xnmvr")
 texture_disabled = ExtResource("11_wlf7p")
 texture_focused = ExtResource("12_8t624")
 
-[node name="BuyLabel" type="Label" parent="CanvasLayer/Panel/Shop1/Item1"]
+[node name="BuyLabel" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop1/Item1"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 3.0
@@ -150,27 +157,22 @@ theme_override_colors/font_shadow_color = Color(0, 0.305882, 0.305882, 0.823529)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Buy"
 
-[node name="Description" type="Label" parent="CanvasLayer/Panel/Shop1"]
+[node name="Description" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop1"]
 layout_mode = 0
-offset_left = 2.66667
-offset_top = 34.0
-offset_right = 354.667
-offset_bottom = 72.0
+offset_left = 3.33334
+offset_top = 32.0
+offset_right = 355.334
+offset_bottom = 70.0
 scale = Vector2(0.095, 0.095)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "+1 clicks more
 +0.2 clicks per second"
 
-[node name="Shop2" type="TextureRect" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 105.0
-offset_right = 61.0
-offset_bottom = 145.0
-scale = Vector2(1.5, 1.5)
+[node name="Shop2" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
 texture = ExtResource("4_5img6")
 
-[node name="Title2" type="Label" parent="CanvasLayer/Panel/Shop2"]
+[node name="Title2" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop2"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 2.66666
@@ -181,7 +183,7 @@ theme_override_colors/font_color = Color(0.937255, 0.843137, 0.560784, 1)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Wine"
 
-[node name="Item2" type="TextureButton" parent="CanvasLayer/Panel/Shop2"]
+[node name="Item2" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/Shop2"]
 layout_mode = 0
 offset_left = 42.6667
 offset_top = 14.6667
@@ -192,7 +194,7 @@ texture_pressed = ExtResource("10_xnmvr")
 texture_disabled = ExtResource("11_wlf7p")
 texture_focused = ExtResource("12_8t624")
 
-[node name="BuyLabel2" type="Label" parent="CanvasLayer/Panel/Shop2/Item2"]
+[node name="BuyLabel2" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop2/Item2"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 3.0
@@ -204,35 +206,30 @@ theme_override_colors/font_shadow_color = Color(0, 0.305882, 0.305882, 0.823529)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Buy"
 
-[node name="Img2" type="TextureRect" parent="CanvasLayer/Panel/Shop2"]
+[node name="Img2" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer/Shop2"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 7.33334
-offset_right = 48.0
-offset_bottom = 47.3333
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("14_tiekq")
 
-[node name="Description2" type="Label" parent="CanvasLayer/Panel/Shop2"]
+[node name="Description2" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop2"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 34.0
-offset_right = 227.0
-offset_bottom = 53.0
+offset_left = 2.66666
+offset_top = 32.6667
+offset_right = 226.667
+offset_bottom = 51.6667
 scale = Vector2(0.14, 0.14)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "+5 clicks more"
 
-[node name="Shop3" type="TextureRect" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 168.0
-offset_right = 61.0
-offset_bottom = 208.0
-scale = Vector2(1.5, 1.5)
+[node name="Shop3" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
 texture = ExtResource("4_5img6")
 
-[node name="Title3" type="Label" parent="CanvasLayer/Panel/Shop3"]
+[node name="Title3" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop3"]
 layout_mode = 0
 offset_left = 3.33333
 offset_top = 4.0
@@ -243,7 +240,7 @@ theme_override_colors/font_color = Color(0.937255, 0.843137, 0.560784, 1)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Chopp Machine"
 
-[node name="Item3" type="TextureButton" parent="CanvasLayer/Panel/Shop3"]
+[node name="Item3" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer/Shop3"]
 layout_mode = 0
 offset_left = 42.6667
 offset_top = 15.3333
@@ -254,7 +251,7 @@ texture_pressed = ExtResource("10_xnmvr")
 texture_disabled = ExtResource("11_wlf7p")
 texture_focused = ExtResource("12_8t624")
 
-[node name="BuyLabel3" type="Label" parent="CanvasLayer/Panel/Shop3/Item3"]
+[node name="BuyLabel3" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop3/Item3"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 2.99997
@@ -266,21 +263,21 @@ theme_override_colors/font_shadow_color = Color(0, 0.305882, 0.305882, 0.823529)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "Buy"
 
-[node name="Img3" type="TextureRect" parent="CanvasLayer/Panel/Shop3"]
+[node name="Img3" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer/Shop3"]
 layout_mode = 0
-offset_left = 8.66667
-offset_top = 8.66666
-offset_right = 48.6667
-offset_bottom = 48.6667
+offset_left = 10.6667
+offset_top = 10.6667
+offset_right = 42.6667
+offset_bottom = 42.6667
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("15_q7iio")
 
-[node name="Description3" type="Label" parent="CanvasLayer/Panel/Shop3"]
+[node name="Description3" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Shop3"]
 layout_mode = 0
-offset_left = 3.33333
-offset_top = 34.0
+offset_left = 3.33334
+offset_top = 32.6667
 offset_right = 355.333
-offset_bottom = 72.0
+offset_bottom = 70.6667
 scale = Vector2(0.106, 0.106)
 theme_override_fonts/font = ExtResource("7_pev34")
 text = "+3 clicks per second"
@@ -318,8 +315,8 @@ theme_override_fonts/font = ExtResource("7_pev34")
 text = "Quit"
 language = "en_US"
 
-[connection signal="pressed" from="CanvasLayer/Panel/Shop1/Item1" to="." method="_on_item_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/Panel/Shop2/Item2" to="." method="_on_item_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Panel/Shop3/Item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Shop1/Item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Shop2/Item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Shop3/Item3" to="." method="_on_item_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Quit" to="." method="_on_quit_pressed"]
