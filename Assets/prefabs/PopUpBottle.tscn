@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cxl7hio6xhewp"]
 
-[ext_resource type="Script" path="res://Assets/prefabs/PopUpBottle.gd" id="1_8sjrb"]
 [ext_resource type="Texture2D" uid="uid://dtbbwcjwxk4fd" path="res://Assets/Player/Bootle.png" id="1_a50ix"]
+[ext_resource type="Script" path="res://Assets/scripts/PopUpBottle.gd" id="1_nkcmf"]
 [ext_resource type="AudioStream" uid="uid://daubygth231pd" path="res://Blob.mp3" id="2_a5s7v"]
 [ext_resource type="FontFile" uid="uid://b0hiocwb1jh1g" path="res://Assets/objects/fonts/kongtext.ttf" id="3_lj1rh"]
 
@@ -113,6 +113,34 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_m8rxg"]
+resource_name = "BottleClick"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Button:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(4.5, 4.5), Vector2(4, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(49, 79), Vector2(44, 73), Vector2(49, 79)]
+}
+
 [sub_resource type="Animation" id="Animation_whxek"]
 length = 0.001
 tracks/0/type = "value"
@@ -212,34 +240,6 @@ tracks/7/keys = {
 "values": [Vector2(49, 79)]
 }
 
-[sub_resource type="Animation" id="Animation_m8rxg"]
-resource_name = "BottleClick"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Button:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(4, 4), Vector2(4.5, 4.5), Vector2(4, 4)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Button:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(49, 79), Vector2(44, 73), Vector2(49, 79)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5giy2"]
 _data = {
 "Bottle pop": SubResource("Animation_4or5x"),
@@ -255,7 +255,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8sjrb")
+script = ExtResource("1_nkcmf")
 
 [node name="BottleSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_a5s7v")
@@ -305,10 +305,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = -65.0
-offset_right = -15.0
-offset_bottom = -33.0
+offset_left = 49.0
+offset_top = 79.0
+offset_right = 65.0
+offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
@@ -318,11 +318,11 @@ texture_normal = ExtResource("1_a50ix")
 
 [node name="Clicks" type="Label" parent="."]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 14.0
-offset_right = 85.0
-offset_bottom = 25.0
-grow_horizontal = 2
+offset_left = 32.0
+offset_top = 7.0
+offset_right = 88.0
+offset_bottom = 18.0
+scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
 theme_override_fonts/font = ExtResource("3_lj1rh")
 theme_override_font_sizes/font_size = 8
@@ -334,12 +334,11 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 27.0
-offset_top = -0.833333
-offset_right = 78.0
-offset_bottom = 10.1667
+offset_left = 28.25
+offset_right = 83.874
+offset_bottom = 11.0
 grow_horizontal = 2
-scale = Vector2(1.2, 1.2)
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
 theme_override_fonts/normal_font = ExtResource("3_lj1rh")
 theme_override_font_sizes/normal_font_size = 8

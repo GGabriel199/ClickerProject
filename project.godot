@@ -15,6 +15,11 @@ run/main_scene="res://Assets/scenes/Principal.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SaveGame="*res://Assets/prefabs/SaveGame.gd"
+PopUpBottle="*res://Assets/prefabs/PopUpBottle.tscn"
+
 [display]
 
 window/size/viewport_width=160
