@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var clicks = PopUpBottle.points
+var clicks
 var cost: int
 var gain_clicks: float
 
