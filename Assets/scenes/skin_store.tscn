@@ -1,0 +1,241 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddlfgo3gb1ewn"]
+
+[ext_resource type="Texture2D" uid="uid://epkk1y4bb85i" path="res://Assets/Objects/PlayerSkins/WaterBottle/tile000.png" id="2_krctf"]
+[ext_resource type="FontFile" uid="uid://5mxecojoodkm" path="res://Assets/Fonts/kongtext.ttf" id="3_fsxpa"]
+[ext_resource type="Texture2D" uid="uid://s5o6gr5barq4" path="res://Assets/Objects/Buttons/TrimmedBrownBtn/tile000.png" id="4_nbil1"]
+[ext_resource type="Texture2D" uid="uid://dfg6rh8esggta" path="res://Assets/Objects/Buttons/TrimmedBrownBtn/tile002.png" id="5_60bcr"]
+[ext_resource type="Texture2D" uid="uid://c0i5egvfqhita" path="res://Assets/Objects/PlayerSkins/Juice/tile000.png" id="6_i33ea"]
+[ext_resource type="Texture2D" uid="uid://dss6x4l316xyp" path="res://Assets/Objects/Buttons/TrimmedBrownBtn/tile001.png" id="6_psuas"]
+[ext_resource type="Texture2D" uid="uid://ds7m10ui60oy1" path="res://Assets/Objects/PlayerSkins/Coffee/tile000.png" id="7_nmh2h"]
+[ext_resource type="Texture2D" uid="uid://chkoa6ol8b4n3" path="res://Assets/Objects/PlayerSkins/Soda/tile000.png" id="8_j24kl"]
+[ext_resource type="Texture2D" uid="uid://xtklu3rswj0q" path="res://Assets/Objects/Buttons/backBtn.png" id="9_dacsi"]
+[ext_resource type="Texture2D" uid="uid://bxni5qejprdfp" path="res://Assets/Objects/PlayerSkins/Weird/tile000.png" id="9_u8h4c"]
+[ext_resource type="Texture2D" uid="uid://68u30ybk5o1r" path="res://Assets/Objects/PlayerSkins/Chstmass/tile000.png" id="10_rjnv1"]
+
+[node name="SkinStore" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 960.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 150.0
+offset_right = 118.0
+offset_bottom = 283.0
+scale = Vector2(5, 5)
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+scroll_deadzone = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Item1" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Water Bottle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item1"]
+layout_mode = 2
+texture = ExtResource("2_krctf")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item1"]
+layout_mode = 2
+texture_normal = ExtResource("4_nbil1")
+texture_pressed = ExtResource("5_60bcr")
+texture_disabled = ExtResource("6_psuas")
+
+[node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item1/TextureButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.2
+offset_right = 103.0
+offset_bottom = 22.2
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Select"
+
+[node name="Item2" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Juice Jar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item2"]
+layout_mode = 2
+texture = ExtResource("6_i33ea")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item2"]
+layout_mode = 2
+texture_normal = ExtResource("4_nbil1")
+texture_pressed = ExtResource("5_60bcr")
+texture_disabled = ExtResource("6_psuas")
+
+[node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item2/TextureButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.2
+offset_right = 103.0
+offset_bottom = 22.2
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Select"
+
+[node name="Item3" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Thermic Bottle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item3"]
+layout_mode = 2
+texture = ExtResource("7_nmh2h")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item3"]
+layout_mode = 2
+texture_normal = ExtResource("4_nbil1")
+texture_pressed = ExtResource("5_60bcr")
+texture_disabled = ExtResource("6_psuas")
+
+[node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item3/TextureButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.2
+offset_right = 103.0
+offset_bottom = 22.2
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Select"
+
+[node name="Item4" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Soda Bottle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item4"]
+layout_mode = 2
+texture = ExtResource("8_j24kl")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item4"]
+layout_mode = 2
+texture_normal = ExtResource("4_nbil1")
+texture_pressed = ExtResource("5_60bcr")
+texture_disabled = ExtResource("6_psuas")
+
+[node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item4/TextureButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.2
+offset_right = 103.0
+offset_bottom = 22.2
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Select"
+
+[node name="Item5" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "A Flask"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item5"]
+layout_mode = 2
+texture = ExtResource("9_u8h4c")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item5"]
+layout_mode = 2
+texture_normal = ExtResource("4_nbil1")
+texture_pressed = ExtResource("5_60bcr")
+texture_disabled = ExtResource("6_psuas")
+
+[node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item5/TextureButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.2
+offset_right = 103.0
+offset_bottom = 22.2
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Select"
+
+[node name="Item6" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Christmass Bottle"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item6"]
+layout_mode = 2
+texture = ExtResource("10_rjnv1")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item6"]
+layout_mode = 2
+texture_normal = ExtResource("4_nbil1")
+texture_pressed = ExtResource("5_60bcr")
+texture_disabled = ExtResource("6_psuas")
+
+[node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item6/TextureButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.2
+offset_right = 103.0
+offset_bottom = 22.2
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Select"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 29.0
+offset_right = 227.0
+offset_bottom = 48.0
+scale = Vector2(2.5, 2.5)
+theme_override_colors/font_color = Color(0.83, 0.741882, 0.4233, 1)
+theme_override_fonts/font = ExtResource("3_fsxpa")
+text = "Skins"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 72.0
+offset_bottom = 61.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("9_dacsi")

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dayggetemnvuq"]
-
-[ext_resource type="Script" path="res://Assets/prefabs/ResourceSave.gd" id="1_qsq7e"]
-
-[node name="Resource" type="Node"]
-script = ExtResource("1_qsq7e")

@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8ho7eg48pyqy"]
+
+[ext_resource type="Texture2D" uid="uid://604fiqtond5k" path="res://Assets/Objects/Items/GroundPanel.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://b01w0285r13p2" path="res://Assets/Objects/Items/Panel.png" id="2"]
+[ext_resource type="FontFile" uid="uid://5mxecojoodkm" path="res://Assets/Fonts/kongtext.ttf" id="3"]
+[ext_resource type="Script" path="res://Assets/Scripts/CanvasGame.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://dmagt8a00l58l" path="res://Assets/Objects/Icons/FingerIcon.png" id="4_bp7da"]
+[ext_resource type="Texture2D" uid="uid://crtxxjb1kxdb1" path="res://Assets/Objects/Buttons/ShopIcon.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://p245dt8xioea" path="res://Assets/Objects/Buttons/configButton.png" id="6_asmka"]
+[ext_resource type="Texture2D" uid="uid://cpa0tf56fmlxe" path="res://Assets/Objects/Buttons/SkinsButton.png" id="8_hfjs5"]
+[ext_resource type="Texture2D" uid="uid://dcw1tc7gn5jo1" path="res://Assets/Objects/Buttons/BackGrdButton.png" id="9_grliv"]
+
+[sub_resource type="FontFile" id="2"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("3"), ExtResource("3")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="CanvasGame" type="CanvasLayer"]
+script = ExtResource("4")
+
+[node name="Panel" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 121.0
+grow_horizontal = 2
+texture = ExtResource("2")
+stretch_mode = 6
+
+[node name="clicksnum" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395833
+anchor_top = 0.677686
+anchor_right = 0.872917
+anchor_bottom = 0.834711
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3")
+text = "clicks text"
+metadata/_edit_use_anchors_ = true
+
+[node name="HiringBtn" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -46.0
+offset_right = -12.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("4_bp7da")
+
+[node name="GroundPanel" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -181.0
+offset_right = 240.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1")
+stretch_mode = 6
+
+[node name="MaxValue" type="RichTextLabel" parent="GroundPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 364.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/default_color = Color(0.588235, 1, 0.564706, 1)
+theme_override_fonts/normal_font = SubResource("2")
+text = "max value"
+
+[node name="Multiplier" type="RichTextLabel" parent="GroundPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0375
+anchor_top = 0.430939
+anchor_right = 0.189583
+anchor_bottom = 0.569061
+theme_override_fonts/normal_font = SubResource("2")
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerLevel" type="RichTextLabel" parent="GroundPanel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 46.0
+offset_right = 361.0
+offset_bottom = 66.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/default_color = Color(0.992188, 0.321686, 0.321686, 1)
+theme_override_fonts/normal_font = SubResource("2")
+text = "level text"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.53125
+anchor_right = 0.745833
+offset_left = -190.0
+offset_top = 131.0
+offset_right = -118.0
+offset_bottom = 163.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="shopbutton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5")
+
+[node name="configbutton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_asmka")
+
+[node name="skinbutton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_hfjs5")
+
+[node name="backgrdbutton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("9_grliv")
+
+[connection signal="pressed" from="Panel/HiringBtn" to="." method="_on_hiring_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/shopbutton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/configbutton" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/skinbutton" to="." method="_on_skinbutton_pressed"]
+[connection signal="pressed" from="HBoxContainer/backgrdbutton" to="." method="_on_backgrdbutton_pressed"]
