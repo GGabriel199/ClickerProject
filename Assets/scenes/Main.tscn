@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqd6k8nd5k0jv"]
+
+[ext_resource type="PackedScene" uid="uid://c8ho7eg48pyqy" path="res://Assets/Scenes/CanvasGame.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dnem3a5c5t3jp" path="res://Assets/Scenes/Background.tscn" id="1_duv35"]
+[ext_resource type="PackedScene" uid="uid://cjkbudcvagdak" path="res://Assets/Scenes/Bottle.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://boxjs2uaxxyhb" path="res://Assets/Scenes/music.tscn" id="4_batds"]
+
+[node name="Main" type="Node"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_duv35")]
+
+[node name="CanvasGame" parent="." instance=ExtResource("1")]
+
+[node name="Control" parent="." instance=ExtResource("2")]
+
+[node name="Music" parent="." instance=ExtResource("4_batds")]

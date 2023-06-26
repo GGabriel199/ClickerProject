@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwyjoma5vo0hp"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/config.gd" id="1_24q6s"]
+[ext_resource type="Texture2D" uid="uid://s5o6gr5barq4" path="res://Assets/Objects/Buttons/TrimmedBrownBtn/tile000.png" id="2_cgsi1"]
+[ext_resource type="Texture2D" uid="uid://xtklu3rswj0q" path="res://Assets/Objects/Buttons/backBtn.png" id="3_27p2f"]
+[ext_resource type="Texture2D" uid="uid://dfg6rh8esggta" path="res://Assets/Objects/Buttons/TrimmedBrownBtn/tile002.png" id="3_j5ld5"]
+[ext_resource type="Texture2D" uid="uid://dss6x4l316xyp" path="res://Assets/Objects/Buttons/TrimmedBrownBtn/tile001.png" id="4_u08tn"]
+[ext_resource type="FontFile" uid="uid://5mxecojoodkm" path="res://Assets/Fonts/kongtext.ttf" id="5_1ljav"]
+[ext_resource type="Texture2D" uid="uid://c0jlefn08jhlw" path="res://Assets/Objects/Buttons/TrimmedRed/tile000-export.png" id="7_00d48"]
+[ext_resource type="Texture2D" uid="uid://djncxvaephxk5" path="res://Assets/Objects/Buttons/TrimmedRed/tile002.png" id="8_j2m8f"]
+[ext_resource type="Texture2D" uid="uid://b0884c3l1wugh" path="res://Assets/Objects/Buttons/TrimmedRed/tile001.png" id="9_p86nj"]
+
+[node name="Configurations" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_24q6s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 320.0
+offset_right = 183.0
+offset_bottom = 376.0
+scale = Vector2(4.5, 4.5)
+alignment = 1
+
+[node name="Music" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_cgsi1")
+texture_pressed = ExtResource("3_j5ld5")
+texture_disabled = ExtResource("4_u08tn")
+
+[node name="TxtBtn" type="Label" parent="VBoxContainer/Music"]
+layout_mode = 0
+offset_left = 5.66666
+offset_top = 4.33334
+offset_right = 165.667
+offset_bottom = 23.3333
+scale = Vector2(0.22, 0.22)
+theme_override_fonts/font = ExtResource("5_1ljav")
+text = "Erase Data"
+
+[node name="Sfx" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_cgsi1")
+texture_pressed = ExtResource("3_j5ld5")
+texture_disabled = ExtResource("4_u08tn")
+
+[node name="TxtBtn" type="Label" parent="VBoxContainer/Sfx"]
+layout_mode = 0
+offset_left = 5.66666
+offset_top = 4.33334
+offset_right = 165.667
+offset_bottom = 23.3333
+scale = Vector2(0.22, 0.22)
+theme_override_fonts/font = ExtResource("5_1ljav")
+text = "Sfx :"
+
+[node name="EraseData" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_cgsi1")
+texture_pressed = ExtResource("3_j5ld5")
+texture_disabled = ExtResource("4_u08tn")
+
+[node name="TxtBtn" type="Label" parent="VBoxContainer/EraseData"]
+layout_mode = 0
+offset_left = 5.66666
+offset_top = 4.33334
+offset_right = 165.667
+offset_bottom = 23.3333
+scale = Vector2(0.22, 0.22)
+theme_override_fonts/font = ExtResource("5_1ljav")
+text = "Music:"
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 72.0
+offset_bottom = 61.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_27p2f")
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 835.0
+offset_right = 218.0
+offset_bottom = 851.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("7_00d48")
+texture_pressed = ExtResource("8_j2m8f")
+texture_disabled = ExtResource("9_p86nj")
+stretch_mode = 4
+
+[node name="TxtQuit" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = 3.14285
+offset_top = 4.28568
+offset_right = 67.1429
+offset_bottom = 23.2857
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("5_1ljav")
+text = "Quit"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 135.0
+offset_top = 32.0
+offset_right = -217.0
+offset_bottom = 52.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.83, 0.741882, 0.4233, 1)
+theme_override_fonts/font = ExtResource("5_1ljav")
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sfx" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/EraseData" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
