@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnnbxlswl7rlo"
-path="res://.godot/imported/Wa-Wi-Ju-Be.png-624a9faf5b45daa2ad95d127ddbda622.ctex"
+path="res://.godot/imported/Wa-Wi-Ju-Be.png-5526dcae780c45108fc6975cfb4c381f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/player/Wa-Wi-Ju-Be.png"
-dest_files=["res://.godot/imported/Wa-Wi-Ju-Be.png-624a9faf5b45daa2ad95d127ddbda622.ctex"]
+source_file="res://Assets/Objects/player/Wa-Wi-Ju-Be.png"
+dest_files=["res://.godot/imported/Wa-Wi-Ju-Be.png-5526dcae780c45108fc6975cfb4c381f.ctex"]
 
 [params]
 

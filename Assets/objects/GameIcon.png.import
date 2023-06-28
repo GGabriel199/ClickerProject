@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8fxshcgtwyoo"
-path="res://.godot/imported/tile003.png-3a3d4160c51277c725a1a3f97997fe1a.ctex"
+uid="uid://ctphbaubcf0v8"
+path="res://.godot/imported/GameIcon.png-a1bc9cd7fee6ff7d6c54839d9c3d44bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/buttons/TrimmedBrownBtn/tile003.png"
-dest_files=["res://.godot/imported/tile003.png-3a3d4160c51277c725a1a3f97997fe1a.ctex"]
+source_file="res://Assets/Objects/GameIcon.png"
+dest_files=["res://.godot/imported/GameIcon.png-a1bc9cd7fee6ff7d6c54839d9c3d44bb.ctex"]
 
 [params]
 

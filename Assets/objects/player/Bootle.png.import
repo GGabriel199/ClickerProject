@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3lwoj0t5uhrs"
-path="res://.godot/imported/Bootle.png-b739615445109ba5973f4ae877ec9eec.ctex"
+path="res://.godot/imported/Bootle.png-815ce9c18fae3cbd2c454accad34f323.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/player/Bootle.png"
-dest_files=["res://.godot/imported/Bootle.png-b739615445109ba5973f4ae877ec9eec.ctex"]
+source_file="res://Assets/Objects/player/Bootle.png"
+dest_files=["res://.godot/imported/Bootle.png-815ce9c18fae3cbd2c454accad34f323.ctex"]
 
 [params]
 

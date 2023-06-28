@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://boxjs2uaxxyhb"]
+[gd_scene load_steps=3 format=3 uid="uid://c37h6pgihvs30"]
 
 [ext_resource type="AudioStream" uid="uid://byrlt6k7nyoiw" path="res://Assets/SFX/BottleClickerTheme.ogg" id="1_7vsto"]
-[ext_resource type="Script" path="res://Assets/Scripts/music_play.gd" id="1_jsuru"]
+[ext_resource type="Script" path="res://Assets/Scripts/Music.gd" id="1_uxj8o"]
 
-[node name="Music" type="Node2D"]
-script = ExtResource("1_jsuru")
+[node name="Music" type="Node"]
+script = ExtResource("1_uxj8o")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="ThemeSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_7vsto")
-attenuation = 5.0

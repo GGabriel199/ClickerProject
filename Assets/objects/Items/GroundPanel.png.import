@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://604fiqtond5k"
-path="res://.godot/imported/GroundPanel.png-9452672d705782f848f07fb09278bc1a.ctex"
+path="res://.godot/imported/GroundPanel.png-8890e8175b90f650d5dc8b837bcd3782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/Items/GroundPanel.png"
-dest_files=["res://.godot/imported/GroundPanel.png-9452672d705782f848f07fb09278bc1a.ctex"]
+source_file="res://Assets/Objects/Items/GroundPanel.png"
+dest_files=["res://.godot/imported/GroundPanel.png-8890e8175b90f650d5dc8b837bcd3782.ctex"]
 
 [params]
 

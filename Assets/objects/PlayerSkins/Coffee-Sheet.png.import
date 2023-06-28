@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb3nm2e6gpmdw"
-path="res://.godot/imported/Coffee-Sheet.png-27ea51c5ccf8a88be2ce5c2683b404b2.ctex"
+path="res://.godot/imported/Coffee-Sheet.png-da6adbeac20e95ff3025c24284c71cf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/PlayerSkins/Coffee-Sheet.png"
-dest_files=["res://.godot/imported/Coffee-Sheet.png-27ea51c5ccf8a88be2ce5c2683b404b2.ctex"]
+source_file="res://Assets/Objects/PlayerSkins/Coffee-Sheet.png"
+dest_files=["res://.godot/imported/Coffee-Sheet.png-da6adbeac20e95ff3025c24284c71cf1.ctex"]
 
 [params]
 

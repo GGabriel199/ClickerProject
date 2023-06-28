@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcb1voc2wy7o5"
-path="res://.godot/imported/Azuleijo.png-390215b5e71db038e36b4f6c4e3068ad.ctex"
+path="res://.godot/imported/Azuleijo.png-364603c704c314bc99744fed1bce320b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/scenario/Azuleijo.png"
-dest_files=["res://.godot/imported/Azuleijo.png-390215b5e71db038e36b4f6c4e3068ad.ctex"]
+source_file="res://Assets/Objects/scenario/Azuleijo.png"
+dest_files=["res://.godot/imported/Azuleijo.png-364603c704c314bc99744fed1bce320b.ctex"]
 
 [params]
 

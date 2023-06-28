@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/BoughtMultiplier.mp3-a01b086586c7e73b7bfcab4d
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

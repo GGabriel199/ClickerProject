@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/BottleClickerTheme.ogg-2727fe97c85af456d651d6
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

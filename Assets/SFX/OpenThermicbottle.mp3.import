@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/OpenThermicbottle.mp3-4f8b91d9dc196db616b15cc
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

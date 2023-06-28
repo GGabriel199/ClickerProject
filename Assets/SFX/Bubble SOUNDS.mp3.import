@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Bubble SOUNDS.mp3-9304dfa33b4dd4ae620dc733c62
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

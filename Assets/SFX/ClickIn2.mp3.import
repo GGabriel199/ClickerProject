@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/ClickIn2.mp3-545b8194f4082bf476aafc8d2b0ea962
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

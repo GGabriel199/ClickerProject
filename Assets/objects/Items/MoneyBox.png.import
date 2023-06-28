@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv3ygi8h8rtas"
-path="res://.godot/imported/MoneyBox.png-11fb61ee8a3de1d53204240b85153c4c.ctex"
+path="res://.godot/imported/MoneyBox.png-617cf4d2015d52181425e063d4513152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/Items/MoneyBox.png"
-dest_files=["res://.godot/imported/MoneyBox.png-11fb61ee8a3de1d53204240b85153c4c.ctex"]
+source_file="res://Assets/Objects/Items/MoneyBox.png"
+dest_files=["res://.godot/imported/MoneyBox.png-617cf4d2015d52181425e063d4513152.ctex"]
 
 [params]
 

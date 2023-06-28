@@ -2,7 +2,6 @@ extends Node
 
 const SAVE_PATH = "user://save_file.save"
 var player_node = NodePath()
-var half_value
 var game_data = {
 	"o2" : 0,
 	"max_value" : 1000000,
@@ -10,12 +9,11 @@ var game_data = {
 	"multiplier" : 1
 }
 var cost_dict = {cost = {
-	"0": 50, "1": 150, "2": 1200, "3": half_value
+	"Soda": 50, "Wine": 150, "Chopp": 1200, "Multiplier": 500000
 }}
 
 func _ready():
 	load_game()
-	half_value = game_data.max_value/2
 	
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -29,21 +27,28 @@ func save_game():
 			"cost" : cost_dict.cost
 		}
 	}
-	return save_dict
-	file.store_string("%s" % save_dict.player)
+	file.store_var(save_dict.player)
 	file.store_line(JSON.new().stringify(save_dict))
-	get_node("../LoadJSON").disable = false
+	print("Game saved")
 	file.close()
+	
+	return save_dict
 	
 func load_game():
 	if FileAccess.file_exists(SAVE_PATH):
 		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
-		game_data.o2 = file.get_as_text(true).to_int()
-		game_data.multiplier = file.get_as_text(true).to_int()
-		game_data.level = file.get_as_text(true).to_int()
-		game_data.max_value = file.get_as_text(true).to_int()
+		var save_dict = {
+			player = {
+			"o2" : game_data.o2,
+			"multiplier" : game_data.multiplier,
+			"level" : game_data.level,
+			"max_value": game_data.max_value,
+			"cost": cost_dict.cost
+			}
+		}
+		save_dict.player = file.get_as_text(true).to_int()
 		var test_json_conv = JSON.new()
-		var save_dict = test_json_conv.get_data()
+		save_dict.player = test_json_conv.get_data()
 		var player = get_node(player_node)
 		print("Game loaded")
 		file.close()
@@ -53,8 +58,3 @@ func load_game():
 func level_limits()-> void:
 	if(game_data.o2 <= 0):
 		game_data.o2 = 0
-		
-	if(game_data.o2 >= game_data.max_value):
-		NewLevel._new_level()
-		
-		

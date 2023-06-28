@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Tap on Glass.mp3-af1fc086857c3e2bd83911972135
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

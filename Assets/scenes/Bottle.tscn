@@ -3,11 +3,38 @@
 [ext_resource type="Texture2D" uid="uid://b2hhlw1ji44lk" path="res://Assets/Objects/PlayerSkins/Bottle-Sheet-export.png" id="1"]
 [ext_resource type="Animation" path="res://Assets/Animations/Player/bottle_click.tres" id="2"]
 [ext_resource type="Animation" path="res://Assets/Animations/Player/bottle_idle.tres" id="3"]
-[ext_resource type="Script" path="res://Assets/Scripts/Bottle.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://c8ho7eg48pyqy" path="res://Assets/Scenes/CanvasGame.tscn" id="5_i48ch"]
 [ext_resource type="AudioStream" uid="uid://bdkritvidnopa" path="res://Assets/SFX/Blob.mp3" id="6_1gylg"]
 [ext_resource type="AudioStream" uid="uid://c0f4ulflyrekn" path="res://Assets/SFX/BottleClick2.mp3" id="7_k54px"]
 [ext_resource type="AudioStream" uid="uid://ra04tg42r32p" path="res://Assets/SFX/Tap on Glass.mp3" id="8_ur2tg"]
+
+[sub_resource type="GDScript" id="GDScript_qpxew"]
+script/source = "extends Control
+
+@onready var player_data = SaveGame.game_data
+var random_value = 1
+	
+func _process(delta):
+	$CanvasGame/Panel/clicksnum.text = \"Clicks: %s\" % str(player_data.o2)
+	$CanvasGame/GroundPanel/MaxValue.text = \"Max Value: %s\" % str(player_data.max_value)
+	$CanvasGame/GroundPanel/PlayerLevel.text = \"Level: %s\" % str(player_data.level)
+	$CanvasGame/GroundPanel/Multiplier.text = \"x%s\" % str(player_data.multiplier)
+	
+func _on_Button_pressed():
+	player_data.o2 += player_data.multiplier
+	print(player_data.o2)
+	_tap_sounds()
+	SaveGame.save_game()
+	random_value = randi()%3 + 1
+
+func _tap_sounds():
+	if(random_value == 1):
+		$Sounds/BottleClickSound.play()
+	if(random_value == 2):
+		$Sounds/BottleClickSound2.play()
+	if(random_value == 3):
+		$Sounds/BottleClickSound3.play()
+"
 
 [sub_resource type="Animation" id="1"]
 length = 0.001
@@ -62,7 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4")
+script = SubResource("GDScript_qpxew")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

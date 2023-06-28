@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/LevelUp.mp3-19072239f2869fecf8f67d3136a15d8d.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

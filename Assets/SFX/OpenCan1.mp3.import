@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/OpenCan1.mp3-6fb5c4a27be6da175ca78d296e891306
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0w531ovl3m0t"
-path="res://.godot/imported/beachnoon.png-ab8ecab0213037155dee4589f7f2a1ac.ctex"
+path="res://.godot/imported/beachnoon.png-3aa6eb42126f78e712eecb34b33855e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/Icons/beachnoon.png"
-dest_files=["res://.godot/imported/beachnoon.png-ab8ecab0213037155dee4589f7f2a1ac.ctex"]
+source_file="res://Assets/Objects/Icons/beachnoon.png"
+dest_files=["res://.godot/imported/beachnoon.png-3aa6eb42126f78e712eecb34b33855e2.ctex"]
 
 [params]
 

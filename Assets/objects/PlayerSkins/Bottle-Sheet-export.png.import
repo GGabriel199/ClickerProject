@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2hhlw1ji44lk"
-path="res://.godot/imported/Bottle-Sheet-export.png-d77b3c4a4ac372e187fa9d61d504567f.ctex"
+path="res://.godot/imported/Bottle-Sheet-export.png-edaf5f822f384d94118f13553da21420.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/PlayerSkins/Bottle-Sheet-export.png"
-dest_files=["res://.godot/imported/Bottle-Sheet-export.png-d77b3c4a4ac372e187fa9d61d504567f.ctex"]
+source_file="res://Assets/Objects/PlayerSkins/Bottle-Sheet-export.png"
+dest_files=["res://.godot/imported/Bottle-Sheet-export.png-edaf5f822f384d94118f13553da21420.ctex"]
 
 [params]
 

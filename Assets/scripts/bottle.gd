@@ -1,10 +1,10 @@
 extends Control
 
 @onready var player_data = SaveGame.game_data
-var times_clicked = 0
+var random_value = 1
 	
 func _process(delta):
-	$CanvasGame/Panel/clicksnum.text = "Clicks: %s" % str(player_data.o2)
+	$Control2/CanvasGame/Panel/clicksnum.text = "Clicks: %s" % str(player_data.o2)
 	$CanvasGame/GroundPanel/MaxValue.text = "Max Value: %s" % str(player_data.max_value)
 	$CanvasGame/GroundPanel/PlayerLevel.text = "Level: %s" % str(player_data.level)
 	$CanvasGame/GroundPanel/Multiplier.text = "x%s" % str(player_data.multiplier)
@@ -12,17 +12,14 @@ func _process(delta):
 func _on_Button_pressed():
 	player_data.o2 += player_data.multiplier
 	print(player_data.o2)
-	times_clicked += 1
 	_tap_sounds()
 	SaveGame.save_game()
+	random_value = randi()%3 + 1
 
 func _tap_sounds():
-	if(times_clicked >= 0):
+	if(random_value == 1):
 		$Sounds/BottleClickSound.play()
-	if(times_clicked >= 4):
-		$Sounds/BottleClickSound.stop()
+	if(random_value == 2):
 		$Sounds/BottleClickSound2.play()
-	if(times_clicked >= 7):
-		$Sounds/BottleClickSound2.stop()
+	if(random_value == 3):
 		$Sounds/BottleClickSound3.play()
-		times_clicked = 0

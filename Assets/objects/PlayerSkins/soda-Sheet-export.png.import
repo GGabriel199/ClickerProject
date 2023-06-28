@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://citrkp6y4l7vu"
-path="res://.godot/imported/soda-Sheet-export.png-4147b4ec9a50823ae016401563e2956c.ctex"
+path="res://.godot/imported/soda-Sheet-export.png-5292b8070ed41da0177d8b7deb0a3a16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/PlayerSkins/soda-Sheet-export.png"
-dest_files=["res://.godot/imported/soda-Sheet-export.png-4147b4ec9a50823ae016401563e2956c.ctex"]
+source_file="res://Assets/Objects/PlayerSkins/soda-Sheet-export.png"
+dest_files=["res://.godot/imported/soda-Sheet-export.png-5292b8070ed41da0177d8b7deb0a3a16.ctex"]
 
 [params]
 

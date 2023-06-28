@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hsjmawqxxkiu"
-path="res://.godot/imported/Juice-Sheet.png-dca4fdac46437a73101a5e83668f9127.ctex"
+path="res://.godot/imported/Juice-Sheet.png-b7e5bd52a66c2bdd806f8a026dc760f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/PlayerSkins/Juice-Sheet.png"
-dest_files=["res://.godot/imported/Juice-Sheet.png-dca4fdac46437a73101a5e83668f9127.ctex"]
+source_file="res://Assets/Objects/PlayerSkins/Juice-Sheet.png"
+dest_files=["res://.godot/imported/Juice-Sheet.png-b7e5bd52a66c2bdd806f8a026dc760f7.ctex"]
 
 [params]
 
