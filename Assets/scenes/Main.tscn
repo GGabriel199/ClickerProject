@@ -1,22 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqd6k8nd5k0jv"]
 
-[ext_resource type="PackedScene" uid="uid://c8ho7eg48pyqy" path="res://Assets/Scenes/CanvasGame.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://dnem3a5c5t3jp" path="res://Assets/Scenes/Background.tscn" id="1_duv35"]
 [ext_resource type="PackedScene" uid="uid://cjkbudcvagdak" path="res://Assets/Scenes/Bottle.tscn" id="2"]
 [ext_resource type="AudioStream" uid="uid://byrlt6k7nyoiw" path="res://Assets/SFX/BottleClickerTheme.ogg" id="4_dk6xg"]
+[ext_resource type="PackedScene" uid="uid://ds2yxyktmom7d" path="res://Assets/Scenes/GUI.tscn" id="5_f2mjv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Music.gd" id="5_xvhtm"]
 
 [node name="Main" type="Node"]
 process_mode = 3
 
+[node name="GUI" parent="." instance=ExtResource("5_f2mjv")]
+
 [node name="Node2D" parent="." instance=ExtResource("1_duv35")]
-
-[node name="CanvasGame" parent="." instance=ExtResource("1")]
-
-[node name="Control" parent="." instance=ExtResource("2")]
 
 [node name="ThemeSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dk6xg")
 script = ExtResource("5_xvhtm")
+
+[node name="Control" parent="." instance=ExtResource("2")]
 
 [connection signal="ready" from="ThemeSfx" to="ThemeSfx" method="_on_ready"]

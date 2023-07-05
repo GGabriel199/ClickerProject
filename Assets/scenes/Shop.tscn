@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgggxupaqivbs"]
+[gd_scene load_steps=15 format=3 uid="uid://cgggxupaqivbs"]
 
 [ext_resource type="Texture2D" uid="uid://c0fcu8yfqphqr" path="res://Assets/Objects/Items/Frame.png" id="1"]
-[ext_resource type="Script" path="res://Assets/Scripts/Shop.gd" id="2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Stores/Shop.gd" id="1_4gb2t"]
+[ext_resource type="PackedScene" uid="uid://dnem3a5c5t3jp" path="res://Assets/Scenes/Background.tscn" id="2_u5r1h"]
 [ext_resource type="Texture2D" uid="uid://xtklu3rswj0q" path="res://Assets/Objects/buttons/backBtn.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://b6t8bjd18hyuc" path="res://Assets/Objects/Items/BottleOfSoda.png" id="3_4w5fj"]
 [ext_resource type="FontFile" uid="uid://5mxecojoodkm" path="res://Assets/Fonts/kongtext.ttf" id="4_fpnva"]
@@ -22,7 +23,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2")
+script = ExtResource("1_4gb2t")
+
+[node name="Node2D" parent="." instance=ExtResource("2_u5r1h")]
+
+[node name="Tiles" parent="Node2D" index="0"]
+layer_0/modulate = Color(0.415686, 0.415686, 0.415686, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
@@ -414,3 +420,5 @@ stream = ExtResource("13_trgwj")
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Item3/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Item4/TextureButton4" to="." method="_on_texture_button_4_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+
+[editable path="Node2D"]

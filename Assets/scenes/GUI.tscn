@@ -1,0 +1,193 @@
+[gd_scene load_steps=18 format=3 uid="uid://ds2yxyktmom7d"]
+
+[ext_resource type="PackedScene" uid="uid://cgggxupaqivbs" path="res://Assets/Scenes/Shop.tscn" id="1_y82lr"]
+[ext_resource type="PackedScene" uid="uid://bennxxtatomsm" path="res://Assets/Scenes/hiring.tscn" id="2_iugnr"]
+[ext_resource type="PackedScene" uid="uid://ddlfgo3gb1ewn" path="res://Assets/Scenes/skin_store.tscn" id="3_y6dm8"]
+[ext_resource type="PackedScene" uid="uid://bwyjoma5vo0hp" path="res://Assets/Scenes/configurations.tscn" id="4_vkwok"]
+[ext_resource type="PackedScene" uid="uid://cmqimknxakcsu" path="res://Assets/Scenes/back_ground_store.tscn" id="5_306q3"]
+[ext_resource type="Script" path="res://Assets/Scripts/CanvasGame.gd" id="6_gmqt5"]
+[ext_resource type="Texture2D" uid="uid://b01w0285r13p2" path="res://Assets/Objects/Items/Panel.png" id="6_sop58"]
+[ext_resource type="FontFile" uid="uid://5mxecojoodkm" path="res://Assets/Fonts/kongtext.ttf" id="7_6e302"]
+[ext_resource type="Script" path="res://Assets/Scripts/GameInterface.gd" id="7_b6h82"]
+[ext_resource type="Texture2D" uid="uid://dmagt8a00l58l" path="res://Assets/Objects/Icons/FingerIcon.png" id="8_niup0"]
+[ext_resource type="Texture2D" uid="uid://604fiqtond5k" path="res://Assets/Objects/Items/GroundPanel.png" id="9_dvxjn"]
+[ext_resource type="Texture2D" uid="uid://crtxxjb1kxdb1" path="res://Assets/Objects/buttons/ShopIcon.png" id="10_fxhak"]
+[ext_resource type="Texture2D" uid="uid://p245dt8xioea" path="res://Assets/Objects/buttons/configButton.png" id="11_8otfs"]
+[ext_resource type="Texture2D" uid="uid://cpa0tf56fmlxe" path="res://Assets/Objects/buttons/SkinsButton.png" id="12_xq4fa"]
+[ext_resource type="Texture2D" uid="uid://dcw1tc7gn5jo1" path="res://Assets/Objects/buttons/BackGrdButton.png" id="13_5bwpp"]
+[ext_resource type="AudioStream" uid="uid://du5180vmuw251" path="res://Assets/SFX/Click3.mp3" id="14_66858"]
+
+[sub_resource type="FontFile" id="FontFile_wb3hl"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("7_6e302"), ExtResource("7_6e302")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="GUI" type="CanvasLayer"]
+process_mode = 1
+script = ExtResource("6_gmqt5")
+
+[node name="Control3" parent="." instance=ExtResource("1_y82lr")]
+visible = false
+
+[node name="Hiring" parent="." instance=ExtResource("2_iugnr")]
+visible = false
+
+[node name="SkinStore" parent="." instance=ExtResource("3_y6dm8")]
+visible = false
+
+[node name="Configurations" parent="." instance=ExtResource("4_vkwok")]
+visible = false
+
+[node name="BackGroundStore" parent="." instance=ExtResource("5_306q3")]
+visible = false
+
+[node name="GameInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_b6h82")
+
+[node name="Panel" type="TextureRect" parent="GameInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 460.0
+offset_bottom = 121.0
+grow_horizontal = 2
+texture = ExtResource("6_sop58")
+stretch_mode = 6
+
+[node name="clicksnum" type="RichTextLabel" parent="GameInterface/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395833
+anchor_top = 0.677686
+anchor_right = 0.872917
+anchor_bottom = 0.834711
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_6e302")
+text = "clicks text"
+metadata/_edit_use_anchors_ = true
+
+[node name="HiringBtn" type="TextureButton" parent="GameInterface/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -46.0
+offset_right = -12.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("8_niup0")
+
+[node name="GroundPanel" type="TextureRect" parent="GameInterface"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 739.0
+offset_right = 460.0
+offset_bottom = 920.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_dvxjn")
+stretch_mode = 6
+
+[node name="MaxValue" type="RichTextLabel" parent="GameInterface/GroundPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 364.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/default_color = Color(0.588235, 1, 0.564706, 1)
+theme_override_fonts/normal_font = SubResource("FontFile_wb3hl")
+text = "max value"
+
+[node name="Multiplier" type="RichTextLabel" parent="GameInterface/GroundPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0375
+anchor_top = 0.430939
+anchor_right = 0.189583
+anchor_bottom = 0.569061
+theme_override_fonts/normal_font = SubResource("FontFile_wb3hl")
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerLevel" type="RichTextLabel" parent="GameInterface/GroundPanel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 46.0
+offset_right = 361.0
+offset_bottom = 66.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/default_color = Color(0.992188, 0.321686, 0.321686, 1)
+theme_override_fonts/normal_font = SubResource("FontFile_wb3hl")
+text = "level text"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.25625
+anchor_right = 1.47083
+offset_left = 43.75
+offset_top = 131.0
+offset_right = 175.167
+offset_bottom = 163.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="shopbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("10_fxhak")
+
+[node name="configbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("11_8otfs")
+
+[node name="skinbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("12_xq4fa")
+
+[node name="backgrdbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("13_5bwpp")
+
+[node name="Node2D" type="Node2D" parent="GameInterface"]
+
+[node name="ClickAudio" type="AudioStreamPlayer2D" parent="GameInterface/Node2D"]
+stream = ExtResource("14_66858")
+
+[connection signal="pressed" from="GameInterface/Panel/HiringBtn" to="." method="_on_hiring_btn_pressed"]
+[connection signal="pressed" from="GameInterface/HBoxContainer/shopbutton" to="." method="_on_shopbutton_pressed"]
+[connection signal="pressed" from="GameInterface/HBoxContainer/configbutton" to="." method="_on_configbutton_pressed"]
+[connection signal="pressed" from="GameInterface/HBoxContainer/skinbutton" to="." method="_on_skinbutton_pressed"]
+[connection signal="pressed" from="GameInterface/HBoxContainer/backgrdbutton" to="." method="_on_backgrdbutton_pressed"]

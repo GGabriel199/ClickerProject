@@ -5,4 +5,6 @@ func _on_texture_button_pressed():
 	print("Data erased")
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Assets/Scenes/Main.tscn")
+	$".".hide()
+	$"../GameInterface".show()
+	get_tree().paused = false
