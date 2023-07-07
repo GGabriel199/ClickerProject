@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmqimknxakcsu"]
+[gd_scene load_steps=11 format=3 uid="uid://cmqimknxakcsu"]
 
 [ext_resource type="Texture2D" uid="uid://c0fcu8yfqphqr" path="res://Assets/Objects/Items/Frame.png" id="1_w1k25"]
 [ext_resource type="Script" path="res://Assets/Scripts/Stores/BackGroundStr.gd" id="1_xoh0v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bscwc2y656oml" path="res://Assets/Objects/Icons/Azuleijo.png" id="6_0hvl3"]
 [ext_resource type="Texture2D" uid="uid://dss6x4l316xyp" path="res://Assets/Objects/buttons/TrimmedBrownBtn/tile001.png" id="6_a3tnq"]
 [ext_resource type="Texture2D" uid="uid://xtklu3rswj0q" path="res://Assets/Objects/buttons/backBtn.png" id="9_f2yey"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/tween_back_btn.gd" id="10_ofjvo"]
 
 [node name="BackGroundStore" type="Control"]
 process_mode = 3
@@ -381,6 +382,7 @@ offset_right = 72.0
 offset_bottom = 61.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("9_f2yey")
+script = ExtResource("10_ofjvo")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 

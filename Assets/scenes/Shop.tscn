@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cgggxupaqivbs"]
+[gd_scene load_steps=16 format=3 uid="uid://cgggxupaqivbs"]
 
 [ext_resource type="Texture2D" uid="uid://c0fcu8yfqphqr" path="res://Assets/Objects/Items/Frame.png" id="1"]
 [ext_resource type="Script" path="res://Assets/Scripts/Stores/Shop.gd" id="1_4gb2t"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0y41dj6uqonj" path="res://Assets/Objects/Items/BottleOfWine.png" id="8_7rw73"]
 [ext_resource type="Texture2D" uid="uid://cxg0u1ogadl35" path="res://Assets/Objects/Items/ChoppMachine.png" id="9_t3gl6"]
 [ext_resource type="Texture2D" uid="uid://cv3ygi8h8rtas" path="res://Assets/Objects/Items/MoneyBox.png" id="11_yxsx1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/tween_back_btn.gd" id="12_0cyky"]
 [ext_resource type="FontFile" uid="uid://d3bmho6p6lwwk" path="res://Assets/Objects/fonts/kongtext.ttf" id="12_jforv"]
 [ext_resource type="AudioStream" uid="uid://du5180vmuw251" path="res://Assets/SFX/Click3.mp3" id="13_trgwj"]
 
@@ -375,6 +376,7 @@ offset_right = 72.0
 offset_bottom = 61.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3")
+script = ExtResource("12_0cyky")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0

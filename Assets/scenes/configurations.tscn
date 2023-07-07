@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwyjoma5vo0hp"]
+[gd_scene load_steps=12 format=3 uid="uid://bwyjoma5vo0hp"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/config.gd" id="1_24q6s"]
 [ext_resource type="Texture2D" uid="uid://s5o6gr5barq4" path="res://Assets/Objects/buttons/TrimmedBrownBtn/tile000.png" id="2_cgsi1"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://5mxecojoodkm" path="res://Assets/Fonts/kongtext.ttf" id="5_1ljav"]
 [ext_resource type="Texture2D" uid="uid://c0jlefn08jhlw" path="res://Assets/Objects/buttons/TrimmedRed/tile000-export.png" id="7_00d48"]
 [ext_resource type="Texture2D" uid="uid://djncxvaephxk5" path="res://Assets/Objects/buttons/TrimmedRed/tile002.png" id="8_j2m8f"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/tween_back_btn.gd" id="8_mktta"]
 [ext_resource type="Texture2D" uid="uid://b0884c3l1wugh" path="res://Assets/Objects/buttons/TrimmedRed/tile001.png" id="9_p86nj"]
 
 [node name="Configurations" type="Control"]
@@ -91,6 +92,7 @@ offset_right = 72.0
 offset_bottom = 61.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_27p2f")
+script = ExtResource("8_mktta")
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
@@ -135,5 +137,6 @@ uppercase = true
 [connection signal="pressed" from="VBoxContainer/Sfx" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/EraseData" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 
 [editable path="Node2D"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ds2yxyktmom7d"]
+[gd_scene load_steps=21 format=3 uid="uid://ds2yxyktmom7d"]
 
 [ext_resource type="PackedScene" uid="uid://cgggxupaqivbs" path="res://Assets/Scenes/Shop.tscn" id="1_y82lr"]
 [ext_resource type="PackedScene" uid="uid://bennxxtatomsm" path="res://Assets/Scenes/hiring.tscn" id="2_iugnr"]
@@ -31,6 +31,104 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_88gpl"]
+resource_name = "ContainerGUI"
+length = 2.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(90, 149), Vector2(95, 149), Vector2(105, 149), Vector2(110, 149)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 3), Vector2(0, -3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel/HiringBtn:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.164061]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Panel/HiringBtn:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(428, 75), Vector2(431, 80), Vector2(428, 75)]
+}
+
+[sub_resource type="Animation" id="Animation_oq83a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(88, 131)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel/HiringBtn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, 75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxuw4"]
+_data = {
+"ContainerGUI": SubResource("Animation_88gpl"),
+"RESET": SubResource("Animation_oq83a")
+}
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 1
@@ -84,19 +182,14 @@ text = "clicks text"
 metadata/_edit_use_anchors_ = true
 
 [node name="HiringBtn" type="TextureButton" parent="GameInterface/Panel"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = -46.0
-offset_right = -12.0
-offset_bottom = -6.0
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 0
+offset_left = 428.0
+offset_top = 75.0
+offset_right = 460.0
+offset_bottom = 107.0
+rotation = -0.164061
 texture_normal = ExtResource("8_niup0")
+stretch_mode = 4
 
 [node name="GroundPanel" type="TextureRect" parent="GameInterface"]
 layout_mode = 1
@@ -150,15 +243,16 @@ text = "level text"
 [node name="HBoxContainer" type="HBoxContainer" parent="GameInterface"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.25625
-anchor_right = 1.47083
-offset_left = 43.75
+anchor_left = -0.175
+anchor_top = 0.15
+anchor_right = -0.175
+anchor_bottom = 0.15
+offset_left = 88.0
 offset_top = 131.0
-offset_right = 175.167
+offset_right = 228.0
 offset_bottom = 163.0
-grow_horizontal = 2
 scale = Vector2(2, 2)
-alignment = 1
+pivot_offset = Vector2(0, -5)
 metadata/_edit_use_anchors_ = true
 
 [node name="shopbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
@@ -180,6 +274,11 @@ texture_normal = ExtResource("12_xq4fa")
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("13_5bwpp")
+
+[node name="AnimateContainer" type="AnimationPlayer" parent="GameInterface/HBoxContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_bxuw4")
+}
 
 [node name="Node2D" type="Node2D" parent="GameInterface"]
 

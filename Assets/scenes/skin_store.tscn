@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddlfgo3gb1ewn"]
+[gd_scene load_steps=15 format=3 uid="uid://ddlfgo3gb1ewn"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Stores/SkinStore.gd" id="1_565dv"]
 [ext_resource type="Texture2D" uid="uid://epkk1y4bb85i" path="res://Assets/Objects/PlayerSkins/WaterBottle/tile000.png" id="2_krctf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://xtklu3rswj0q" path="res://Assets/Objects/buttons/backBtn.png" id="9_dacsi"]
 [ext_resource type="Texture2D" uid="uid://bxni5qejprdfp" path="res://Assets/Objects/PlayerSkins/Weird/tile000.png" id="9_u8h4c"]
 [ext_resource type="Texture2D" uid="uid://68u30ybk5o1r" path="res://Assets/Objects/PlayerSkins/Chstmass/tile000.png" id="10_rjnv1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/tween_back_btn.gd" id="14_njohl"]
 
 [node name="SkinStore" type="Control"]
 process_mode = 3
@@ -29,19 +30,18 @@ layer_0/modulate = Color(0.415686, 0.415686, 0.415686, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 150.0
-offset_right = 118.0
-offset_bottom = 283.0
+offset_left = 22.0
+offset_top = 176.0
+offset_right = 110.0
+offset_bottom = 301.0
 scale = Vector2(5, 5)
-horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 scroll_deadzone = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 20
 
 [node name="Item1" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -50,20 +50,25 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_fsxpa")
-text = "Water Bottle"
+theme_override_font_sizes/font_size = 8
+text = "Water
+Bottle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item1"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_krctf")
 stretch_mode = 4
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item1"]
 layout_mode = 2
+size_flags_vertical = 4
 texture_normal = ExtResource("4_nbil1")
 texture_pressed = ExtResource("5_60bcr")
 texture_disabled = ExtResource("6_psuas")
+stretch_mode = 4
 
 [node name="BtnTxt1" type="Label" parent="ScrollContainer/HBoxContainer/Item1/TextureButton"]
 layout_mode = 0
@@ -81,17 +86,21 @@ layout_mode = 2
 [node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_fsxpa")
-text = "Juice Jar"
+theme_override_font_sizes/font_size = 8
+text = "Juice
+Jar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item2"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("6_i33ea")
 stretch_mode = 4
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item2"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_nbil1")
 texture_pressed = ExtResource("5_60bcr")
 texture_disabled = ExtResource("6_psuas")
@@ -112,17 +121,22 @@ layout_mode = 2
 [node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item3"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_fsxpa")
-text = "Thermic Bottle"
+theme_override_font_sizes/font_size = 8
+text = "Thermic
+Bottle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item3"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 texture = ExtResource("7_nmh2h")
 stretch_mode = 4
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item3"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_nbil1")
 texture_pressed = ExtResource("5_60bcr")
 texture_disabled = ExtResource("6_psuas")
@@ -143,17 +157,21 @@ layout_mode = 2
 [node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item4"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_fsxpa")
-text = "Soda Bottle"
+theme_override_font_sizes/font_size = 8
+text = "Soda
+Bottle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item4"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("8_j24kl")
 stretch_mode = 4
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item4"]
 layout_mode = 2
+size_flags_vertical = 3
 texture_normal = ExtResource("4_nbil1")
 texture_pressed = ExtResource("5_60bcr")
 texture_disabled = ExtResource("6_psuas")
@@ -174,10 +192,16 @@ layout_mode = 2
 [node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item5"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_fsxpa")
-text = "A Flask"
+theme_override_font_sizes/font_size = 8
+text = "A
+Flask"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item5"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("9_u8h4c")
 stretch_mode = 4
 
@@ -203,15 +227,22 @@ layout_mode = 2
 [node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Item6"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_fsxpa")
-text = "Christmass Bottle"
+theme_override_font_sizes/font_size = 8
+text = "Christmas
+Bottle"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Item6"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("10_rjnv1")
 stretch_mode = 4
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/HBoxContainer/Item6"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 texture_normal = ExtResource("4_nbil1")
 texture_pressed = ExtResource("5_60bcr")
 texture_disabled = ExtResource("6_psuas")
@@ -248,6 +279,7 @@ offset_right = 72.0
 offset_bottom = 61.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("9_dacsi")
+script = ExtResource("14_njohl")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 

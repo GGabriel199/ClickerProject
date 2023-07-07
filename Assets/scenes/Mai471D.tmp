@@ -31,5 +31,4 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[connection signal="tree_entered" from="GUI" to="GUI" method="_on_tree_entered"]
 [connection signal="ready" from="ThemeSfx" to="ThemeSfx" method="_on_ready"]

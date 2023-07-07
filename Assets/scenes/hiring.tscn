@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bennxxtatomsm"]
+[gd_scene load_steps=13 format=3 uid="uid://bennxxtatomsm"]
 
 [ext_resource type="Texture2D" uid="uid://c0fcu8yfqphqr" path="res://Assets/Objects/Items/Frame.png" id="1_5dfhf"]
 [ext_resource type="Script" path="res://Assets/Scripts/Stores/Hiring.gd" id="1_ern85"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cvoo11qm7dv0g" path="res://Assets/Events/TrimmedPistol/tile000.png" id="7_8q58h"]
 [ext_resource type="Texture2D" uid="uid://dwdg6pbd81pgi" path="res://Assets/Events/TrimmedSpring/tile003.png" id="8_iiqi7"]
 [ext_resource type="Texture2D" uid="uid://xtklu3rswj0q" path="res://Assets/Objects/buttons/backBtn.png" id="9_x8r5y"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/tween_back_btn.gd" id="12_jaioe"]
 
 [node name="Hiring" type="Control"]
 process_mode = 3
@@ -393,6 +394,7 @@ offset_right = 72.0
 offset_bottom = 61.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("9_x8r5y")
+script = ExtResource("12_jaioe")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 

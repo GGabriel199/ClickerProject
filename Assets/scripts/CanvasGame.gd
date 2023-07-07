@@ -1,5 +1,7 @@
 extends CanvasLayer
 	
+	
+
 func _on_texture_button_2_pressed():
 	get_tree().change_scene_to_file("res://Assets/Scenes/configurations.tscn")
 
