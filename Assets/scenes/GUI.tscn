@@ -243,13 +243,13 @@ text = "level text"
 [node name="HBoxContainer" type="HBoxContainer" parent="GameInterface"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.175
+anchor_left = 0.975
 anchor_top = 0.15
-anchor_right = -0.175
+anchor_right = 0.975
 anchor_bottom = 0.15
 offset_left = 88.0
 offset_top = 131.0
-offset_right = 228.0
+offset_right = 269.0
 offset_bottom = 163.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(0, -5)
@@ -260,20 +260,66 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("10_fxhak")
 
-[node name="configbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
+[node name="Title1" type="Label" parent="GameInterface/HBoxContainer/shopbutton"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 64.0
+offset_bottom = 54.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_6e302")
+text = "SHOP"
+vertical_alignment = 1
+
+[node name="backgrdbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("11_8otfs")
+texture_normal = ExtResource("13_5bwpp")
+
+[node name="Title2" type="Label" parent="GameInterface/HBoxContainer/backgrdbutton"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 35.0
+offset_right = 108.0
+offset_bottom = 54.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_6e302")
+text = "Backgr."
+vertical_alignment = 1
 
 [node name="skinbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("12_xq4fa")
 
-[node name="backgrdbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
+[node name="Title3" type="Label" parent="GameInterface/HBoxContainer/skinbutton"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 80.0
+offset_bottom = 54.0
+scale = Vector2(0.45, 0.45)
+theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_6e302")
+text = "Skins"
+vertical_alignment = 1
+
+[node name="configbutton" type="TextureButton" parent="GameInterface/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("13_5bwpp")
+texture_normal = ExtResource("11_8otfs")
+
+[node name="Title4" type="Label" parent="GameInterface/HBoxContainer/configbutton"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 35.0
+offset_right = 108.0
+offset_bottom = 54.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0.623529, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_6e302")
+text = "Config."
+vertical_alignment = 1
 
 [node name="AnimateContainer" type="AnimationPlayer" parent="GameInterface/HBoxContainer"]
 libraries = {
@@ -287,6 +333,6 @@ stream = ExtResource("14_66858")
 
 [connection signal="pressed" from="GameInterface/Panel/HiringBtn" to="." method="_on_hiring_btn_pressed"]
 [connection signal="pressed" from="GameInterface/HBoxContainer/shopbutton" to="." method="_on_shopbutton_pressed"]
-[connection signal="pressed" from="GameInterface/HBoxContainer/configbutton" to="." method="_on_configbutton_pressed"]
-[connection signal="pressed" from="GameInterface/HBoxContainer/skinbutton" to="." method="_on_skinbutton_pressed"]
 [connection signal="pressed" from="GameInterface/HBoxContainer/backgrdbutton" to="." method="_on_backgrdbutton_pressed"]
+[connection signal="pressed" from="GameInterface/HBoxContainer/skinbutton" to="." method="_on_skinbutton_pressed"]
+[connection signal="pressed" from="GameInterface/HBoxContainer/configbutton" to="." method="_on_configbutton_pressed"]

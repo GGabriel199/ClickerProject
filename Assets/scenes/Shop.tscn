@@ -28,9 +28,6 @@ script = ExtResource("1_4gb2t")
 
 [node name="Node2D" parent="." instance=ExtResource("2_u5r1h")]
 
-[node name="Tiles" parent="Node2D" index="0"]
-layer_0/modulate = Color(0.415686, 0.415686, 0.415686, 1)
-
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 40.0

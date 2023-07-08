@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd7j7scpebckv"]
+
+[ext_resource type="AudioStream" uid="uid://byrlt6k7nyoiw" path="res://Assets/SFX/BottleClickerTheme.ogg" id="1_v1k0a"]
+[ext_resource type="Script" path="res://Assets/Scripts/Music.gd" id="1_vht4t"]
+[ext_resource type="AudioStream" uid="uid://doky7h6trrc3f" path="res://Assets/SFX/BottleClickerTheme2.wav" id="2_0wewi"]
+[ext_resource type="AudioStream" uid="uid://uujt1l8qnri6" path="res://Assets/SFX/BottleClickerTheme3.wav" id="3_nxmow"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vht4t")
+
+[node name="Theme1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_v1k0a")
+
+[node name="Theme2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_0wewi")
+
+[node name="Theme3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nxmow")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="finished" from="Theme1" to="." method="_on_theme_1_finished"]
+[connection signal="ready" from="Theme1" to="." method="_on_theme_1_ready"]
+[connection signal="finished" from="Theme2" to="." method="_on_theme_2_finished"]
+[connection signal="ready" from="Theme2" to="." method="_on_theme_2_ready"]
+[connection signal="finished" from="Theme3" to="." method="_on_theme_3_finished"]
+[connection signal="ready" from="Theme3" to="." method="_on_theme_3_ready"]

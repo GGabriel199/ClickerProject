@@ -1,6 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnem3a5c5t3jp"]
+[gd_scene load_steps=13 format=3 uid="uid://dnem3a5c5t3jp"]
 
+[ext_resource type="Texture2D" uid="uid://cfrc1sgvne7d6" path="res://Assets/Objects/scenario/Blue.png" id="1_7pvqo"]
 [ext_resource type="Texture2D" uid="uid://bcb1voc2wy7o5" path="res://Assets/Objects/scenario/Azuleijo.png" id="1_pixtv"]
+[ext_resource type="Texture2D" uid="uid://bsypptglmq1fl" path="res://Assets/Objects/Icons/sky.png" id="3_dv7d8"]
+[ext_resource type="Texture2D" uid="uid://nw305o6a36lq" path="res://Assets/Objects/scenario/Industry.png" id="4_jabgc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2twx"]
+texture = ExtResource("1_7pvqo")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tly2s"]
+sources/0 = SubResource("TileSetAtlasSource_i2twx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77rs7"]
 texture = ExtResource("1_pixtv")
@@ -42,9 +59,46 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_77rs7")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3ip3"]
+texture = ExtResource("3_dv7d8")
+texture_region_size = Vector2i(96, 96)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mewou"]
+sources/0 = SubResource("TileSetAtlasSource_c3ip3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nck64"]
+texture = ExtResource("4_jabgc")
+texture_region_size = Vector2i(96, 96)
+
+[sub_resource type="TileSet" id="TileSet_uw64u"]
+sources/0 = SubResource("TileSetAtlasSource_nck64")
+
 [node name="Node2D" type="Node2D"]
 
-[node name="Tiles" type="TileMap" parent="."]
+[node name="Blue" type="TileMap" parent="."]
+visible = false
+scale = Vector2(6.7, 6.7)
+tile_set = SubResource("TileSet_tly2s")
+cell_quadrant_size = 8
+format = 2
+layer_0/name = "layer1"
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65540, 0, 0, 65539, 0, 0, 65538, 0, 0, 65537, 0, 0, 65536, 0, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 196612, 65536, 0, 262147, 0, 1, 262146, 0, 1, 262145, 0, 1, 262144, 0, 1, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 262148, 0, 1, 327683, 0, 1, 327682, 0, 1, 327681, 0, 1, 327684, 0, 1, 327680, 0, 1, 393216, 65536, 1, 393217, 65536, 1, 393218, 65536, 1, 393219, 65536, 1, 393220, 65536, 1, 458752, 65536, 1, 458753, 65536, 1, 458754, 65536, 1, 458755, 65536, 1, 458756, 65536, 1, 524292, 65536, 1, 524291, 65536, 1, 524290, 65536, 1, 524289, 65536, 1, 524288, 65536, 1)
+
+[node name="GTiles" type="TileMap" parent="."]
+visible = false
 scale = Vector2(6.7, 6.7)
 tile_set = SubResource("TileSet_7odgc")
 cell_quadrant_size = 8
@@ -57,3 +111,31 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(0, 262144, 0, 8, 458752, 0, 1114112, 262144, 3, 1114120, 458752, 3, 65536, 262144, 1, 131072, 262144, 1, 196608, 262144, 1, 262144, 262144, 1, 327680, 262144, 1, 393216, 262144, 1, 1048576, 262144, 2, 983040, 262144, 2, 917504, 262144, 2, 851968, 262144, 2, 786432, 262144, 2, 720896, 262144, 2, 655360, 262144, 2, 589824, 262144, 2, 524288, 262144, 2, 458752, 262144, 2, 65544, 458752, 1, 131080, 458752, 1, 196616, 458752, 1, 262152, 458752, 1, 327688, 458752, 1, 393224, 458752, 1, 458760, 458752, 1, 524296, 458752, 1, 589832, 458752, 1, 655368, 458752, 1, 720904, 458752, 2, 786440, 458752, 2, 851976, 458752, 2, 917512, 458752, 2, 983048, 458752, 2, 1048584, 458752, 2, 1, 327680, 0, 2, 327680, 0, 3, 327680, 0, 4, 327680, 0, 5, 393216, 0, 6, 393216, 0, 7, 393216, 0, 1114113, 327680, 3, 1114114, 393216, 3, 1114115, 327680, 3, 1114116, 393216, 3, 1114117, 327680, 3, 1114118, 393216, 3, 1114119, 327680, 3)
+
+[node name="Sky" type="TileMap" parent="."]
+visible = false
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_mewou")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 0, 1, 131080, 0, 1, 131084, 0, 1, 196620, 0, 1, 262156, 0, 1, 262155, 0, 1, 327691, 0, 1, 393227, 0, 1, 458763, 0, 1, 524299, 0, 1, 524300, 0, 1, 458764, 0, 1, 589836, 0, 1, 655372, 0, 1, 720907, 0, 1, 786443, 0, 1, 851979, 0, 1, 917515, 0, 1, 983051, 0, 1, 1048587, 0, 1, 1114123, 0, 1, 1179659, 0, 1, 1245195, 0, 1, 1310731, 0, 1, 1376267, 0, 1, 1441803, 0, 1, 1376268, 0, 1, 1310732, 0, 1, 1245196, 0, 1, 1179660, 0, 1, 1114124, 0, 1, 1048588, 0, 1, 983052, 0, 1, 1441804, 0, 1, 1507340, 0, 1, 1572876, 0, 1, 1638412, 0, 1, 1703948, 0, 1, 1769484, 0, 1, 1769483, 0, 1, 1769482, 0, 1, 1769481, 0, 1, 1769480, 0, 1, 1769479, 0, 1, 1769478, 0, 1, 1769477, 0, 1, 1769476, 0, 1, 1769475, 0, 1, 1769474, 0, 1, 1703938, 0, 1, 1638402, 0, 1, 1572866, 0, 1, 1507330, 0, 1, 1441794, 0, 1, 1376258, 0, 1, 1310722, 0, 1, 1310723, 0, 1, 1245187, 0, 1, 1179651, 0, 1, 1114115, 0, 1, 1048579, 0, 1, 983043, 0, 1, 917507, 0, 1, 851971, 0, 1, 786435, 0, 1, 720898, 0, 1, 655362, 0, 1, 589826, 0, 1, 524290, 0, 1, 786434, 0, 1, 851970, 0, 1, 917506, 0, 1, 983042, 0, 1, 1048578, 0, 1, 1114114, 0, 1, 1310724, 0, 1, 1376260, 0, 1, 1441797, 0, 1, 1507333, 0, 1, 1572870, 0, 1, 1638406, 0, 1, 1638407, 0, 1, 1572871, 0, 1, 1507335, 0, 1, 1441799, 0, 1, 1376263, 0, 1, 1310727, 0, 1, 1245191, 0, 1, 1179655, 0, 1, 1114119, 0, 1, 1048583, 0, 1, 983047, 0, 1, 917511, 0, 1, 851975, 0, 1, 786439, 0, 1, 720902, 0, 1, 655366, 0, 1, 589830, 0, 1, 524294, 0, 1, 524295, 0, 1, 458759, 0, 1, 1572867, 65536, 1)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(1572868, 65536, 0, 917512, 65536, 1, 393219, 0, 0, 196619, 65536, 0, 1703947, 0, 0)
+
+[node name="Industrial" type="TileMap" parent="."]
+scale = Vector2(6.7, 6.7)
+tile_set = SubResource("TileSet_uw64u")
+cell_quadrant_size = 8
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 1, 65536, 0, 0, 65537, 65536, 0, 65538, 131072, 0, 65539, 196608, 0, 65540, 65536, 0, 327680, 0, 0, 327681, 65536, 0, 327682, 131072, 0, 327683, 196608, 0, 327684, 0, 1, 262144, 0, 1, 196608, 0, 0, 196609, 65536, 0, 262145, 65536, 1, 196610, 65536, 1, 262146, 131072, 1, 196611, 196608, 0, 262147, 196608, 1, 393216, 0, 1, 393217, 65536, 1, 393218, 65536, 1, 393219, 196608, 1, 458752, 0, 0, 524288, 0, 1, 458753, 65536, 0, 524289, 65536, 1, 458754, 131072, 0, 524290, 131072, 1, 458755, 196608, 0, 524291, 196608, 1, 131072, 0, 1, 131073, 65536, 1, 131074, 131072, 1, 131075, 196608, 1, 1, 65536, 1, 2, 131072, 1, 3, 196608, 1, 4, 196608, 1, 131076, 196608, 1, 262148, 196608, 1, 524292, 196608, 1, 458756, 65536, 0, 393220, 65536, 0, 196612, 65536, 0)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()

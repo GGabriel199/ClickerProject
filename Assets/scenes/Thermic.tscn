@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://y85mbe486jqv"]
+
+[ext_resource type="AudioStream" uid="uid://ra04tg42r32p" path="res://Assets/SFX/Tap on Glass.mp3" id="1_6017q"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/ThermicIdle.gd" id="1_e8n3g"]
+[ext_resource type="Script" path="res://Assets/Scripts/AnimationBottle.gd" id="1_khklc"]
+[ext_resource type="Texture2D" uid="uid://cb3nm2e6gpmdw" path="res://Assets/Objects/PlayerSkins/Coffee-Sheet.png" id="2_pw6k1"]
+[ext_resource type="AudioStream" uid="uid://c0f4ulflyrekn" path="res://Assets/SFX/BottleClick2.mp3" id="2_wldem"]
+[ext_resource type="AudioStream" uid="uid://bdkritvidnopa" path="res://Assets/SFX/Blob.mp3" id="3_uap2j"]
+
+[sub_resource type="Animation" id="Animation_1c55j"]
+resource_name = "Click"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThermicBottle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_10bqy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThermicBottle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qwdn"]
+_data = {
+"Click": SubResource("Animation_1c55j"),
+"RESET": SubResource("Animation_10bqy")
+}
+
+[node name="Button" type="Button"]
+anchors_preset = -1
+anchor_right = 0.520833
+anchor_bottom = 0.260417
+offset_right = 1.52588e-05
+offset_bottom = 1.52588e-05
+flat = true
+script = ExtResource("1_e8n3g")
+metadata/_edit_use_anchors_ = true
+
+[node name="ThermicBottle" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_pw6k1")
+centered = false
+hframes = 2
+frame = 1
+script = ExtResource("1_khklc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThermicBottle"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_4qwdn")
+}
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="BottleClickSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("1_6017q")
+
+[node name="BottleClickSound2" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("2_wldem")
+
+[node name="BottleClickSound3" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_uap2j")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
