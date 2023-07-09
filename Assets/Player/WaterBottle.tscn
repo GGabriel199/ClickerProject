@@ -7,6 +7,21 @@
 [ext_resource type="AudioStream" uid="uid://c0f4ulflyrekn" path="res://Assets/SFX/BottleClick2.mp3" id="5_jkgd1"]
 [ext_resource type="AudioStream" uid="uid://bdkritvidnopa" path="res://Assets/SFX/Blob.mp3" id="6_n7cyr"]
 
+[sub_resource type="Animation" id="Animation_as72j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_ixiqw"]
 resource_name = "idle"
 length = 1.2
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_as72j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cesar"]

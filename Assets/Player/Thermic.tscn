@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://y85mbe486jqv"]
 
-[ext_resource type="AudioStream" uid="uid://ra04tg42r32p" path="res://Assets/SFX/Tap on Glass.mp3" id="1_6017q"]
-[ext_resource type="Script" path="res://Assets/Scripts/Tweens/ThermicIdle.gd" id="1_e8n3g"]
-[ext_resource type="Script" path="res://Assets/Scripts/AnimationBottle.gd" id="1_khklc"]
-[ext_resource type="Texture2D" uid="uid://cb3nm2e6gpmdw" path="res://Assets/Objects/PlayerSkins/Coffee-Sheet.png" id="2_pw6k1"]
-[ext_resource type="AudioStream" uid="uid://c0f4ulflyrekn" path="res://Assets/SFX/BottleClick2.mp3" id="2_wldem"]
-[ext_resource type="AudioStream" uid="uid://bdkritvidnopa" path="res://Assets/SFX/Blob.mp3" id="3_uap2j"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tweens/ThermicIdle.gd" id="1_0a654"]
+[ext_resource type="Texture2D" uid="uid://cb3nm2e6gpmdw" path="res://Assets/Objects/PlayerSkins/Coffee-Sheet.png" id="2_56xlp"]
+[ext_resource type="Script" path="res://Assets/Scripts/AnimationBottle.gd" id="3_52l5h"]
+[ext_resource type="AudioStream" uid="uid://ra04tg42r32p" path="res://Assets/SFX/Tap on Glass.mp3" id="4_4vn3u"]
+[ext_resource type="AudioStream" uid="uid://c0f4ulflyrekn" path="res://Assets/SFX/BottleClick2.mp3" id="5_1133r"]
+[ext_resource type="AudioStream" uid="uid://bdkritvidnopa" path="res://Assets/SFX/Blob.mp3" id="6_jnkvq"]
 
 [sub_resource type="Animation" id="Animation_1c55j"]
 resource_name = "Click"
@@ -51,16 +51,16 @@ anchor_bottom = 0.260417
 offset_right = 1.52588e-05
 offset_bottom = 1.52588e-05
 flat = true
-script = ExtResource("1_e8n3g")
+script = ExtResource("1_0a654")
 metadata/_edit_use_anchors_ = true
 
 [node name="ThermicBottle" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("2_pw6k1")
+texture = ExtResource("2_56xlp")
 centered = false
 hframes = 2
 frame = 1
-script = ExtResource("1_khklc")
+script = ExtResource("3_52l5h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ThermicBottle"]
 root_node = NodePath("../..")
@@ -71,12 +71,12 @@ libraries = {
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="BottleClickSound" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("1_6017q")
+stream = ExtResource("4_4vn3u")
 
 [node name="BottleClickSound2" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("2_wldem")
+stream = ExtResource("5_1133r")
 
 [node name="BottleClickSound3" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("3_uap2j")
+stream = ExtResource("6_jnkvq")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cjkbudcvagdak"]
+[gd_scene load_steps=2 format=3 uid="uid://cjkbudcvagdak"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/BottlePos.gd" id="1_0qmtm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,3 +15,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Bottles" type="Node2D" parent="CenterContainer"]
+script = ExtResource("1_0qmtm")

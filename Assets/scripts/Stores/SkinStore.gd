@@ -1,11 +1,11 @@
 extends Node
 
-var texture1 = load("res://Assets/Objects/PlayerSkins/Bottle-Sheet-export.png")
-var texture2 = load("res://Assets/Objects/PlayerSkins/Juice-Sheet.png")
-var texture3 = load("res://Assets/Objects/PlayerSkins/Coffee-Sheet.png")
-var texture4 = load("res://Assets/Objects/PlayerSkins/soda-Sheet-export.png")
-var texture5 = load("res://Assets/Objects/PlayerSkins/WeirdBottle-Sheet-export.png")
-var texture6 = load("res://Assets/Objects/PlayerSkins/Christmas bottle.png")
+var texture1 = "res://Assets/Player/WaterBottle.tscn"
+var texture2 = "res://Assets/Player/juice_jar.tscn"
+var texture3 = "res://Assets/Player/Thermic.tscn"
+var texture4
+var texture5
+var texture6
 
 func _on_back_pressed():
 	$".".hide()
@@ -13,19 +13,19 @@ func _on_back_pressed():
 	get_tree().paused = false
 
 func _on_texture_button_1_pressed():
-	pass
+	Global.playerDir = texture1
 
 func _on_texture_button_2_pressed():
-	pass
+	Global.playerDir = texture2
 
 func _on_texture_button_3_pressed():
-	pass
+	Global.playerDir = texture3
 
 func _on_texture_button_4_pressed():
-	pass
+	Global.playerDir = texture4
 
 func _on_texture_button_5_pressed():
-	pass
+	Global.playerDir = texture5
 
 func _on_texture_button_6_pressed():
-	pass
+	Global.playerDir = texture6
